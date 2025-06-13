@@ -17,7 +17,9 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
-      background: transparent;
+      background-color: transparent;
+      position: relative;
+      z-index: 1;
     }
     header img {
       height: 100px;
@@ -25,6 +27,8 @@
     nav {
       position: absolute;
       right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
       gap: 20px;
     }
@@ -56,7 +60,7 @@
     }
     .layout {
       display: flex;
-      height: 100vh;
+      height: calc(100vh - 160px);
       overflow: hidden;
     }
     .sidebar {
@@ -65,6 +69,8 @@
       color: white;
       padding: 20px;
       box-sizing: border-box;
+      height: 100vh;
+      overflow-y: auto;
     }
     .sidebar h2 {
       font-size: 1.5em;
@@ -110,8 +116,8 @@
     <img src="images/nova_emblem.png" alt="NOVA Logo">
     <nav>
       <a href="#characters">Characters</a>
-      <a href="#world">世界観</a>
-      <a href="#glossary">用語集</a>
+      <a href="#world">World</a>
+      <a href="#glossary">Glossary</a>
     </nav>
   </header>
 
@@ -124,8 +130,8 @@
       <h2>News</h2>
       <ul>
         <li><a href="#">[Update] New character revealed!</a></li>
-        <li><a href="#">[Chapter 3] 「神を穿つ剣」 公開開始</a></li>
-        <li><a href="#">[解説] 雷祈ノ命の五段階とは？</a></li>
+        <li><a href="#">[Chapter 3] "Pierce the God" now live</a></li>
+        <li><a href="#">[Lore] The five stages of Thunder Prayer</a></li>
       </ul>
     </aside>
 
