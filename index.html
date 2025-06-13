@@ -55,6 +55,7 @@
       font-size: 2.4em;
       opacity: 0;
       animation: fadeUp 1.6s ease-out forwards;
+      background: none;
     }
     .tagline span {
       color: #ffffff;
@@ -106,10 +107,10 @@
     }
     .main-visual {
       height: 60vh;
-      background: url('images/ishana_main.png') no-repeat center/cover;
+      background: none;
       opacity: 0;
       animation: fadeUp 1.8s ease-out forwards;
-      transition: background-image 1s ease-in-out;
+      transition: none;
     }
     .main-visual.flash {
       animation: flash 0.5s ease-in-out;
@@ -144,12 +145,7 @@
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
-        const visual = document.querySelector('.main-visual');
-        visual.classList.add('flash');
-        setTimeout(() => {
-          visual.style.backgroundImage = "url('images/queen_red.png')";
-          visual.classList.remove('flash');
-        }, 500);
+        document.body.style.backgroundImage = "url('images/queen_red.png')";
       }, 10000);
     });
   </script>
