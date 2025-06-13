@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      background: url('images/ishana_main.png') no-repeat center/cover;
+      background: url('images/ishana_main.png') no-repeat center/contain;
       background-color: #000;
       color: #ffffff;
       font-family: 'Segoe UI', sans-serif;
@@ -79,11 +79,17 @@
       width: 100%;
     }
     .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
       width: 25vw;
-      background-color: transparent;
+      background-color: #000;
+      background-image: none;
       color: white;
-      padding: 20px;
+      padding: 110px 20px 20px 20px;
       box-sizing: border-box;
+      z-index: 0;
     }
     .sidebar h2 {
       font-size: 1.5em;
@@ -103,7 +109,10 @@
     }
     .main-content {
       width: 75vw;
+      margin-left: 25vw;
       overflow-y: auto;
+      position: relative;
+      z-index: 1;
     }
     .main-visual {
       height: 60vh;
