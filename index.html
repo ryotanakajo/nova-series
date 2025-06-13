@@ -1,56 +1,100 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ノヴァシリーズ 公式サイト</title>
+  <title>NOVA Series</title>
   <style>
     body {
       margin: 0;
       background-color: #0a0a0a;
       color: #ffffff;
       font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
     }
     header {
-      background-color: #1a1a1a;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #e63946;
-    }
-    nav {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      background-color: #141414;
-      padding: 10px;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+    header img {
+      height: 80px;
+    }
+    nav {
+      position: absolute;
+      right: 30px;
+      display: flex;
+      gap: 20px;
     }
     nav a {
       color: #ffffff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
     nav a:hover {
       color: #e63946;
     }
-    .main-visual {
-      background-image: url('images/ishana_main.png');
-      background-size: cover;
-      background-position: center;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .tagline {
       text-align: center;
+      margin-top: 10px;
+      font-size: 1.2em;
+      opacity: 0;
+      animation: fadeIn 3s ease-in-out forwards;
     }
-    .main-visual h2 {
-      font-size: 3em;
+    .tagline span {
       color: #ffffff;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+    .tagline .highlight {
+      color: #e63946;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .layout {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 25vw;
+      background-color: #111;
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+    .sidebar a {
+      color: #e63946;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+    }
+    .main-content {
+      width: 75vw;
+      overflow-y: auto;
+    }
+    .main-visual {
+      height: 60vh;
+      background: url('images/ishana_main.png') no-repeat center/cover;
+    }
+    .news-section {
+      padding: 20px;
+      background-color: #0a0a0a;
+    }
+    .news-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .news-section article {
+      margin-bottom: 20px;
     }
     footer {
       background-color: #1a1a1a;
@@ -63,17 +107,46 @@
 </head>
 <body>
   <header>
-    <h1>ノヴァシリーズ</h1>
+    <img src="images/nova_emblem.png" alt="NOVA Logo">
+    <nav>
+      <a href="#characters">Characters</a>
+      <a href="#world">World</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#characters">キャラクター紹介</a>
-    <a href="#world">世界観</a>
-    <a href="#glossary">用語集</a>
-  </nav>
+  <div class="tagline">
+    <span>神々の残響が、いま<span class="highlight">目を覚ます。</span></span>
+  </div>
 
-  <div class="main-visual">
-    <h2>神々の残響が、いま目を覚ます。</h2>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>News</h2>
+      <ul>
+        <li><a href="#">[Update] New character revealed!</a></li>
+        <li><a href="#">[Chapter 3] "Pierce the God" now live</a></li>
+        <li><a href="#">[Lore] What are the five stages of Thunder Prayer?</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="main-visual"></div>
+      <section class="news-section">
+        <h2>Latest Articles</h2>
+        <article>
+          <h3>Heir of the Thunder Blood</h3>
+          <p>The power left by the gods awakens again. Queen Ishana, age 15—her story begins.</p>
+        </article>
+        <article>
+          <h3>Official Illustration Released</h3>
+          <p>The red-haired queen who bears divine blood. Her beauty and presence captivate the realm.</p>
+        </article>
+        <article>
+          <h3>What is the Kingdom of Ellasia?</h3>
+          <p>One of the seven divine lands, Ellasia holds secrets at the heart of its rule.</p>
+        </article>
+      </section>
+    </main>
   </div>
 
   <footer>
