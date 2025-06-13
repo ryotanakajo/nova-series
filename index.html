@@ -108,6 +108,14 @@
       background: url('images/ishana_main.png') no-repeat center/cover;
       opacity: 0;
       animation: fadeUp 1.8s ease-out forwards;
+      transition: background-image 1s ease-in-out;
+    }
+    .main-visual.flash {
+      animation: flash 0.5s ease-in-out;
+    }
+    @keyframes flash {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(3); }
     }
     .news-section {
       padding: 20px;
@@ -132,6 +140,18 @@
       animation: fadeUp 2.2s ease-out forwards;
     }
   </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const visual = document.querySelector('.main-visual');
+        visual.classList.add('flash');
+        setTimeout(() => {
+          visual.style.backgroundImage = "url('images/queen_red.png')";
+          visual.classList.remove('flash');
+        }, 500);
+      }, 10000);
+    });
+  </script>
 </head>
 <body>
   <header>
