@@ -7,11 +7,22 @@
   <style>
     body {
       margin: 0;
-      background: url('images/ishana_main.png') no-repeat center/contain;
-      background-color: #000;
+      background: #000;
       color: #ffffff;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 25vw;
+      width: 75vw;
+      height: 100vh;
+      background: url('images/ishana_main.png') no-repeat center/contain;
+      z-index: -1;
+      background-color: #000;
     }
     header {
       position: fixed;
@@ -130,9 +141,10 @@
     }
     .news-section {
       padding: 20px;
-      background-color: #0a0a0a;
+      background-color: #000;
       opacity: 0;
       animation: fadeUp 2s ease-out forwards;
+      margin-top: 60vh;
     }
     .news-section h2 {
       font-size: 1.8em;
@@ -160,18 +172,18 @@
   </script>
 </head>
 <body>
-  <header>
-    <img src="images/nova_emblem.png" alt="NOVA Logo">
-    <nav>
+  <header style="display: flex; align-items: center; padding: 0 30px;">
+    <img src="images/nova_emblem.png" alt="NOVA Logo" style="height: 60px; margin-right: 20px;">
+    <nav style="display: flex; gap: 20px;">
       <a href="#characters">Characters</a>
       <a href="#world">World</a>
       <a href="#glossary">Glossary</a>
     </nav>
   </header>
 
-  <div class="tagline">
-    <span>神々の残響が、いま<span class="highlight">目を覚ます。</span></span>
-  </div>
+  <div class="tagline" style="writing-mode: vertical-rl; text-orientation: upright; font-size: 2em; position: absolute; top: 100px; right: 10px;">
+  <span>神々の残響が、いま</span><br><span class="highlight">目を覚ます。</span>
+</div>
 
   <div class="layout fade-in">
     <aside class="sidebar">
