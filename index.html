@@ -13,9 +13,9 @@
       overflow-x: hidden;
       position: relative;
     }
-body::before {
-  content: none;
-}
+    body::before {
+      content: none;
+    }
     header {
       position: fixed;
       top: 0;
@@ -138,7 +138,7 @@ body::before {
       background-color: #000;
       opacity: 0;
       animation: fadeUp 2s ease-out forwards;
-      margin-top: 10vh;
+      margin-top: 5vh;
     }
     .news-section h2 {
       font-size: 1.8em;
@@ -156,7 +156,7 @@ body::before {
       opacity: 0;
       animation: fadeUp 2.2s ease-out forwards;
     }
-  @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -192,48 +192,34 @@ body::before {
         margin: 20px auto;
       }
     }
-  .background-layer {
-  position: absolute;
-  top: 0;
-  left: 25vw;
-  width: 75vw;
-  min-height: 100vh;
-  background: url('images/queen_red.png') no-repeat top center;
-  background-size: cover;
-  z-index: 0;
-}
-.main-content {
-  position: relative;
-  z-index: 1;
-}
-</style>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.body.style.backgroundImage = "url('images/queen_red.png')";
-      }, 10000);
-    });
-  </script>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.body.classList.add('switch-bg');
-      }, 10000);
-    });
-  </script>
+    .background-layer {
+      position: absolute;
+      top: 0;
+      left: 25vw;
+      width: 75vw;
+      min-height: 100vh;
+      background: url('images/queen_red.png') no-repeat top center;
+      background-size: cover;
+      z-index: 0;
+    }
+    .main-content {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
   <header style="display: flex; align-items: center; padding: 0 30px;">
     <img src="images/nova_emblem_transparent.png" alt="NOVA Logo" style="height: 60px; margin-right: 20px;">
-<nav style="display: flex; gap: 20px;">
-  <a href="#characters">Characters</a>
-  <a href="world.html">World</a>
-  <a href="#glossary">Glossary</a>
-</nav>
+    <nav style="display: flex; gap: 20px;">
+      <a href="#characters">Characters</a>
+      <a href="world.html">World</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
   </header>
   <div class="tagline" style="writing-mode: vertical-rl; text-orientation: upright; font-size: 2em; position: absolute; top: 100px; right: 10px;">
-  <span>神々の残響が、いま</span><br><span class="highlight">目を覚ます。</span>
-</div>
+    <span>神々の残響が、いま</span><br><span class="highlight">目を覚ます。</span>
+  </div>
   <div class="layout fade-in">
     <aside class="sidebar">
       <h2>News</h2>
@@ -244,7 +230,7 @@ body::before {
       </ul>
     </aside>
     <div class="background-layer"></div>
-$1
+    <main class="main-content">
       <div class="main-visual"></div>
       <section class="news-section">
         <h2>最新記事</h2>
