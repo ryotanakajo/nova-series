@@ -14,16 +14,7 @@
       position: relative;
     }
 body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 16.66vw;
-  width: 83.33vw;
-  height: 100vh;
-  background: url('../../images/queen_red.png') no-repeat center center;
-  background-size: contain;
-  background-color: #000;
-  z-index: -1;
+  content: none;
 }
     header {
       position: fixed;
@@ -201,23 +192,21 @@ body::before {
         margin: 20px auto;
       }
     }
-  
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 25vw;
-      width: 75vw;
-      height: 100vh;
-      background: url('images/ishana_main.png') no-repeat center/contain;
-      z-index: -1;
-      background-color: #000;
-    }
-    body.switch-bg::before {
-      background: url('images/queen_red.png') no-repeat center/contain;
-    }
-
-  </style>
+  .background-layer {
+  position: absolute;
+  top: 0;
+  left: 25vw;
+  width: 75vw;
+  min-height: 100vh;
+  background: url('images/queen_red.png') no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+}
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+</style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
@@ -225,7 +214,6 @@ body::before {
       }, 10000);
     });
   </script>
-
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
@@ -233,7 +221,6 @@ body::before {
       }, 10000);
     });
   </script>
-
 </head>
 <body>
   <header style="display: flex; align-items: center; padding: 0 30px;">
@@ -244,11 +231,9 @@ body::before {
   <a href="#glossary">Glossary</a>
 </nav>
   </header>
-
   <div class="tagline" style="writing-mode: vertical-rl; text-orientation: upright; font-size: 2em; position: absolute; top: 100px; right: 10px;">
   <span>神々の残響が、いま</span><br><span class="highlight">目を覚ます。</span>
 </div>
-
   <div class="layout fade-in">
     <aside class="sidebar">
       <h2>News</h2>
@@ -258,8 +243,8 @@ body::before {
         <li><a href="#">[Lore] The five stages of Thunder Prayer</a></li>
       </ul>
     </aside>
-
-    <main class="main-content">
+    <div class="background-layer"></div>
+$1
       <div class="main-visual"></div>
       <section class="news-section">
         <h2>最新記事</h2>
@@ -278,7 +263,6 @@ body::before {
       </section>
     </main>
   </div>
-
   <footer>
     &copy; 2025 NOVA Series. All rights reserved.
   </footer>
