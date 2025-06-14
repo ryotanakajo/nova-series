@@ -43,14 +43,14 @@
       height: 60px;
     }
 
-    nav {
-      position: absolute;
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
+   nav {
+      position: static !important;   /* ← これで absolute を無効化 */
+      transform: none !important;    /* ← 位置調整を解除 */
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
+
 
     nav a {
       color: #ffffff;
