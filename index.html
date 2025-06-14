@@ -93,22 +93,22 @@ nav {
     }
 
     .layout {
-      display: flex;
-      width: 1920px;        /* ← 固定幅にする！ */
-      margin: 0 auto; 
+        display: flex;
+        width: 100%;
+        margin-top: 0;
     }
 
     .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 480px;         
-      background-color: #000;
-      padding: 110px 20px 20px 20px;
-      box-sizing: border-box;
-      color: white;
-      z-index: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 25vw;
+        background-color: #000;
+        padding: 110px 20px 20px 20px;
+        box-sizing: border-box;
+        color: white;
+        z-index: 0;
     }
 
     .sidebar h2 {
@@ -130,12 +130,12 @@ nav {
     }
 
     .main-content {
-      width: 1440px;        /* ← 残りの75% */
-      margin-left: 0;       /* ← 不要になるのでリセット */
-      padding: 0 20px 20px 20px;
-      color: white;
-      background-color: #000;
-      z-index: 1;
+        width: 75vw;
+        margin-left: 25vw;
+        padding: 0 20px 20px 20px;
+        color: white;
+        background-color: #000;
+        z-index: 1;
     }
 
     .news-section {
