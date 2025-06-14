@@ -33,7 +33,7 @@
     }
     .section {
       padding: 60px 40px;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.3);
       margin: 20px;
       border-radius: 8px;
     }
@@ -48,19 +48,18 @@
     a {
       color: #e63946;
     }
-.typewriter {
+      .typewriter {
   overflow: hidden;
+  white-space: normal;
+  border-left: 0.15em solid #e63946;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
   display: inline-block;
-  animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
-  white-space: nowrap;
-  border-right: 0.15em solid #e63946;
+  animation-fill-mode: forwards;
 }
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+    @keyframes typing {
+  from { height: 0 }
+  to { height: 100% }
 }
-
       to { width: 100% }
     }
     @keyframes blink-caret {
@@ -102,6 +101,7 @@
   やがてその手が、滅びかけた王国をもう一度掴み直すときが来る。<br>
   ――これは、ひとりの王女が“真の王”へと至るまでの物語。</p>
 </div>
+
 
   <div class="section" id="about-seven-nations">
     <div class="typewriter">
