@@ -48,6 +48,20 @@
     a {
       color: #e63946;
     }
+      .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 0.15em solid #e63946;
+      animation: typing 4s steps(60, end), blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #e63946 }
+    }
   </style>
 </head>
 <body>
@@ -69,6 +83,7 @@
   </div>
 
   <div class="section" id="overview">
+  <div class="typewriter">
   <h2>World Overview</h2>
   <p>【あらすじ：イシャナ・エラシア編】<br>
   3066年、エラシア人とセレフィム人との間で「終焉戦争」が勃発。<br>
@@ -90,18 +105,24 @@
     <h2>七つの国家</h2>
     <p>各国の簡単な説明。名前、特性、同盟や敵対関係などを記述する予定です。</p>
   </div>
+</div>
 
-  <div class="section" id="gods">
+<div class="section" id="gods">
+  <div class="typewriter">
     <h2>神々の体系</h2>
     <p>神々の階層や祈りの構造。彼らがこの世界や登場人物にどのように関わっているかを記述予定です。</p>
   </div>
+</div>
 
-  <div class="section" id="timeline">
+<div class="section" id="timeline">
+  <div class="typewriter">
     <h2>年表</h2>
     <p>この世界における主要な出来事を時系列で記述する予定です。</p>
   </div>
+</div>
 
-  <div class="section" id="about-seven-nations">
+<div class="section" id="about-seven-nations">
+  <div class="typewriter">
     <h2>七国連合とは</h2>
     <p>
       かつて、大陸の中心には一つの巨大な国家が存在していた。<br>
@@ -120,5 +141,6 @@
       だからこそ、彼らは今もなお「エラシア人」と呼ばれている。
     </p>
   </div>
+</div>
 </body>
 </html>
