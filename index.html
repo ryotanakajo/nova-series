@@ -44,14 +44,15 @@ header {
     }
 
 nav {
-  position: static !important;
-  top: auto !important;      /* ← これ追加！ */
-  right: auto !important;    /* ← これも追加！ */
-  transform: none !important;
+  position: static;
+  top: auto;
+  right: auto;
+  transform: none;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
+
 
     nav a {
       color: #ffffff;
@@ -160,14 +161,6 @@ nav {
 
 header img {
   height: 60px;
-}
-
-nav {
-  position: static;       /* ← absolute をやめて通常フローにする */
-  transform: none;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;        /* ← 画面が狭くなった時の折り返し */
 }
 
 nav a {
