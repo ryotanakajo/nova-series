@@ -309,6 +309,50 @@ header {
   </footer>
 
   <script>
+    <script>
+  const backgrounds = [
+    {
+      url: "images/queen_red.png",
+      line: ["その血が、", "運命を変える。"]
+    },
+    {
+      url: "images/titleII.png",
+      line: ["光の意志が、", "世界を導く。"]
+    },
+    {
+      url: "images/titlevI.png",
+      line: ["闇の底で、", "名もなき神が目を開ける。"]
+    },
+    {
+      url: "images/titlevII.png",
+      line: ["最後の剣が、", "静かに天を裂く。"]
+    }
+  ];
+
+  let index = 0;
+  function cycleBackground() {
+    const bg = document.querySelector('.background-layer');
+    const tagline = document.querySelector('.tagline');
+    const { url, line } = backgrounds[index];
+
+    if (bg) {
+      bg.style.background = `url('${url}') no-repeat top center`;
+      bg.style.backgroundSize = "cover";
+    }
+
+    if (tagline) {
+      tagline.innerHTML = `
+        <span>${line[0]}</span><br><span class="highlight">${line[1]}</span>
+      `;
+    }
+
+    index = (index + 1) % backgrounds.length;
+    setTimeout(cycleBackground, 10000);
+  }
+
+  window.addEventListener('DOMContentLoaded', cycleBackground);
+</script>
+
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         const bg = document.querySelector('.background-layer');
