@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- トップページ -->
+  <url>
+    <loc>https://www.nova-series.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- ワールドページ -->
+  <url>
+    <loc>https://www.nova-series.com/world.html</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- イシャナ・エラシア EXTRA -->
+  <url>
+    <loc>https://www.nova-series.com/world/ishana/summary.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 各ノヴァ（仮リンクは編集してね） -->
+  <url>
+    <loc>https://www.nova-series.com/world/nova2/summary.html</loc>
+  </url>
+  <url>
+    <loc>https://www.nova-series.com/world/nova6/summary.html</loc>
+  </url>
+  <url>
+    <loc>https://www.nova-series.com/world/nova7/summary.html</loc>
+  </url>
+
+</urlset>
