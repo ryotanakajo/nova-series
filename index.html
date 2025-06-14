@@ -43,13 +43,16 @@
       height: 60px;
     }
 
-   nav {
-      position: static !important;   /* ← これで absolute を無効化 */
-      transform: none !important;    /* ← 位置調整を解除 */
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+nav {
+  position: static !important;
+  top: auto !important;      /* ← これ追加！ */
+  right: auto !important;    /* ← これも追加！ */
+  transform: none !important;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 
 
     nav a {
