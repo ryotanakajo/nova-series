@@ -200,6 +200,22 @@
         margin: 20px auto;
       }
     }
+  
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 25vw;
+      width: 75vw;
+      height: 100vh;
+      background: url('images/ishana_main.png') no-repeat center/contain;
+      z-index: -1;
+      background-color: #000;
+    }
+    body.switch-bg::before {
+      background: url('images/queen_red.png') no-repeat center/contain;
+    }
+
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -208,6 +224,15 @@
       }, 10000);
     });
   </script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.body.classList.add('switch-bg');
+      }, 10000);
+    });
+  </script>
+
 </head>
 <body>
   <header style="display: flex; align-items: center; padding: 0 30px;">
