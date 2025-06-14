@@ -48,18 +48,19 @@
     a {
       color: #e63946;
     }
-      .typewriter {
+.typewriter {
   overflow: hidden;
-  white-space: normal;
-  border-left: 0.15em solid #e63946;
-  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
   display: inline-block;
-  animation-fill-mode: forwards;
+  animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+  white-space: nowrap;
+  border-right: 0.15em solid #e63946;
 }
-    @keyframes typing {
-  from { height: 0 }
-  to { height: 100% }
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
+
       to { width: 100% }
     }
     @keyframes blink-caret {
@@ -100,11 +101,6 @@
   だが静かな瓦礫の王宮の奥で、少女はゆっくりと目を覚ましていく。<br><br>
   やがてその手が、滅びかけた王国をもう一度掴み直すときが来る。<br>
   ――これは、ひとりの王女が“真の王”へと至るまでの物語。</p>
-</div>
-
-    <h2>七つの国家</h2>
-    <p>各国の簡単な説明。名前、特性、同盟や敵対関係などを記述する予定です。</p>
-  </div>
 </div>
 
   <div class="section" id="about-seven-nations">
