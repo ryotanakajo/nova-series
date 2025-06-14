@@ -1,18 +1,260 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOVA Series</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 25vw;
+      width: 75vw
+      height: 100vh;
+      background: url('images/ishana_main.png') no-repeat center/contain;
+      z-index: -1;
+      background-color: #000;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      background-color: rgba(0, 0, 0, 0.0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 30px;
+      z-index: 1000;
+      opacity: 0;
+      animation: fadeUp 1.2s ease-out forwards;
+    }
+    header img {
+      height: 60px;
+    }
+    nav {
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: text-shadow 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover {
+      text-shadow: 0 0 10px #e63946;
+      color: #ffffff;
+    }
+    .tagline {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 2.4em;
+      opacity: 0;
+      animation: fadeUp 1.6s ease-out forwards;
+      background: none;
+    }
+    .tagline span {
+      color: #ffffff;
+    }
+    .tagline .highlight {
+      color: #e63946;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1.2s ease-out forwards;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .layout {
+      display: flex;
+      width: 100%;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 25vw;
+      background-color: #000;
+      background-image: none;
+      color: white;
+      padding: 110px 20px 20px 20px;
+      box-sizing: border-box;
+      z-index: 0;
+    }
+    .sidebar h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+    .sidebar a {
+      color: #e63946;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+      transition: text-shadow 0.3s ease, color 0.3s ease;
+    }
+    .sidebar a:hover {
+      text-shadow: 0 0 8px #e63946;
+      color: #ffffff;
+    }
+    .main-content {
+      width: 75vw;
+      margin-left: 25vw;
+      overflow-y: auto;
+      position: relative;
+      z-index: 1;
+    }
+    .main-visual {
+      height: 60vh;
+      background: none;
+      opacity: 0;
+      animation: fadeUp 1.8s ease-out forwards;
+      transition: none;
+    }
+    .main-visual.flash {
+      animation: flash 0.5s ease-in-out;
+    }
+    @keyframes flash {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(3); }
+    }
+    .news-section {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      background-color: #000;
+      opacity: 0;
+      animation: fadeUp 2s ease-out forwards;
+      margin-top: 60vh;
+    }
+    .news-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .news-section article {
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+      opacity: 0;
+      animation: fadeUp 2.2s ease-out forwards;
+    }
+  @media screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
+      }
+      header img {
+        margin-bottom: 10px;
+      }
+      nav {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        z-index: 1;
+      }
+      .main-content {
+        width: 100%;
+        margin-left: 0;
+      }
+      .tagline {
+        writing-mode: horizontal-tb !important;
+        text-orientation: initial;
+        font-size: 1.5em;
+        text-align: center;
+        position: static;
+        margin: 20px auto;
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.body.style.backgroundImage = "url('images/queen_red.png')";
+      }, 10000);
+    });
+  </script>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#characters">Characters</a>
-      <a href="world.html">World</a>
-      <a href="#glossary">Glossary</a>
-    </nav>
+  <header style="display: flex; align-items: center; padding: 0 30px;">
+    <img src="images/nova_emblem.png" alt="NOVA Logo" style="height: 60px; margin-right: 20px;">
+<nav style="display: flex; gap: 20px;">
+  <a href="#characters">Characters</a>
+  <a href="world.html">World</a>
+  <a href="#glossary">Glossary</a>
+</nav>
   </header>
+
+  <div class="tagline" style="writing-mode: vertical-rl; text-orientation: upright; font-size: 2em; position: absolute; top: 100px; right: 10px;">
+  <span>神々の残響が、いま</span><br><span class="highlight">目を覚ます。</span>
+</div>
+
+  <div class="layout fade-in">
+    <aside class="sidebar">
+      <h2>News</h2>
+      <ul>
+        <li><a href="#">[Update] New character revealed!</a></li>
+        <li><a href="#">[Chapter 3] "Pierce the God" now live</a></li>
+        <li><a href="#">[Lore] The five stages of Thunder Prayer</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="main-visual"></div>
+      <section class="news-section">
+        <h2>最新記事</h2>
+        <article>
+          <h3>雷祈の血を継ぐ者</h3>
+          <p>神々が遺した力、それを受け継ぐ者が再び目を覚ます。女王イシャナ、15歳。いまその物語が始まる。</p>
+        </article>
+        <article>
+          <h3>イシャナ陛下、公式イラスト公開</h3>
+          <p>赤髪の姫、神の血を継ぐ唯一の存在。その美貌と威厳が世界を魅了する。</p>
+        </article>
+        <article>
+          <h3>エラシア王国とは？</h3>
+          <p>七つに分かれた古代の神王領。その中心たる王国と女王の秘密に迫る。</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    &copy; 2025 NOVA Series. All rights reserved.
+  </footer>
 </body>
 </html>
