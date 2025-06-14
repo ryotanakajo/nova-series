@@ -193,15 +193,15 @@
       }
     }
     .background-layer {
-      position: absolute;
-      top: 0;
-      left: 25vw;
-      width: 75vw;
-      min-height: 100vh;
-      background: url('images/queen_red.png') no-repeat top center;
-      background-size: cover;
-      z-index: 0;
-    }
+  position: fixed;
+  top: 0;
+  left: 25vw;
+  width: 75vw;
+  height: 100vh;
+  background: url('/images/ishana_main.png') no-repeat top center;
+  background-size: cover;
+  z-index: -1;
+}
     .main-content {
       position: relative;
       z-index: 1;
@@ -210,6 +210,7 @@
 
 </head>
 <body>
+  <div class="background-layer"></div>
   <header style="display: flex; align-items: center; padding: 0 30px;">
     <img src="images/nova_emblem_transparent.png" alt="NOVA Logo" style="height: 60px; margin-right: 20px;">
     <nav style="display: flex; gap: 20px;">
@@ -259,6 +260,7 @@
       const bg = document.querySelector('.background-layer');
       if (bg) {
         bg.style.background = "url('/images/queen_red.png') no-repeat top center";
+bg.style.backgroundSize = "cover";
 bg.style.backgroundSize = "cover";
       }
     }, 10000);
