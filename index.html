@@ -258,7 +258,8 @@
     setTimeout(() => {
       const bg = document.querySelector('.background-layer');
       if (bg) {
-        bg.style.backgroundImage = "url('/images/queen_red.png')";
+        bg.style.background = "url('/images/queen_red.png') no-repeat top center";
+bg.style.backgroundSize = "cover";
       }
     }, 10000);
   });
