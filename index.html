@@ -2,30 +2,27 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>NOVA Series</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="エラシア王国を舞台に、女王イシャナと7人のノヴァが織りなす神話と戦記。">
-  <link rel="icon" type="image/png" href="images/favicon-32x32.png">
-
+  <title>NOVA Series</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      min-width: 1920px;
-      min-height: 2160px;
+      min-height: 100vh;
       font-family: 'Segoe UI', sans-serif;
+      background: transparent;
     }
 
     .background-layer {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 20vw;
       width: 80vw;
-      height: 100%;
-      background: url('/images/title_I.png') no-repeat top center;
-      background-size: 100% auto;
-      z-index: -9999;
+      height: 2160px;
+      background: url('images/title_I.png') no-repeat top center;
+      background-size: cover;
+      z-index: -1;
     }
 
     header {
@@ -34,11 +31,11 @@
       left: 0;
       width: 100%;
       height: 90px;
-      background-color: rgba(0, 0, 0, 0.0);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 30px;
+      background: transparent;
       z-index: 1000;
     }
 
@@ -49,28 +46,12 @@
     nav {
       display: flex;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-weight: bold;
-    }
-
-    nav a:hover {
-      text-shadow: 0 0 10px #e63946;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 2em;
-      color: white;
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      cursor: pointer;
-      z-index: 1100;
     }
 
     .sidebar {
@@ -79,112 +60,85 @@
       left: 0;
       width: 20vw;
       height: 100vh;
-      background-color: #000;
+      background: black;
       color: white;
-      padding: 110px 20px 20px 20px;
+      padding: 110px 20px 20px;
       box-sizing: border-box;
-      z-index: 1001;
+      z-index: 0;
     }
 
-    .sidebar h2 {
-      font-size: 1.5em;
-      border-bottom: 1px solid #444;
-      padding-bottom: 10px;
-    }
-
-    .sidebar a {
-      color: #e63946;
-      display: block;
-      margin: 10px 0;
-      text-decoration: none;
-    }
-
-    .sidebar a:hover {
-      color: #fff;
-      text-shadow: 0 0 8px #e63946;
-    }
-
-    .sidebar .close-btn {
-      display: none;
-      font-size: 1.5em;
-      text-align: right;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    .content-wrapper {
+    .main-content {
       margin-left: 20vw;
-      padding: 0 20px;
-      color: white;
-      background-color: #000;
-    }
-
-    .tagline {
-      position: absolute;
-      top: 300px;
-      right: 10px;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: 2.6em;
-      color: #fff;
-      opacity: 0;
-      animation: fadeInDown 1.5s ease-out forwards;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .tagline .highlight {
-      color: #e63946;
+      min-height: 2160px;
+      padding: 110px 20px 20px;
+      box-sizing: border-box;
     }
 
     .news-section {
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 40px 20px;
+      width: 100vw;
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      padding: 40px 0;
       box-sizing: border-box;
     }
 
-    .news-section h2 {
-      font-size: 1.8em;
-    }
-
-    .news-section article {
-      margin-bottom: 20px;
+    .news-section-inner {
+      margin-left: 20vw;
+      width: 75vw;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
 
     footer {
-      background-color: #1a1a1a;
+      width: 100vw;
+      background: #1a1a1a;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
       color: #aaa;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    /* モバイル対応 */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
+    .hamburger {
+      display: none;
+    }
 
+    @media (max-width: 768px) {
       .sidebar {
         display: none;
-        width: 80vw;
-        padding-top: 60px;
+      }
+
+      .hamburger {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 2em;
+        color: white;
         z-index: 1100;
+        cursor: pointer;
       }
 
-      .sidebar.active {
+      .sidebar.collapsible {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80vw;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        z-index: 1001;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidebar.collapsible.active {
         display: block;
       }
 
-      .sidebar .close-btn {
-        display: block;
-      }
-
-      .content-wrapper {
+      .news-section-inner {
         margin-left: 0;
+        width: 100%;
       }
     }
   </style>
@@ -193,93 +147,53 @@
   <div class="background-layer"></div>
 
   <header>
-    <div class="header-left">
-      <img src="images/nova_emblem_transparent.png" alt="NOVA Logo">
-    </div>
-    <nav class="header-right">
-      <a href="#characters">Characters</a>
-      <a href="world.html">World</a>
-      <a href="#glossary">Glossary</a>
+    <img src="images/nova_emblem_transparent.png" alt="Logo">
+    <nav>
+      <a href="#">Characters</a>
+      <a href="#">World</a>
+      <a href="#">Glossary</a>
     </nav>
   </header>
 
   <div class="hamburger" onclick="toggleSidebar()">☰</div>
 
-  <aside class="sidebar" id="sidebar">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
+  <aside class="sidebar">
     <h2>News</h2>
     <ul>
       <li><a href="#">[Update] New character revealed!</a></li>
-      <li><a href="#">[Chapter 3] "Pierce the God" now live</a></li>
-      <li><a href="#">[Lore] The five stages of Thunder Prayer</a></li>
+      <li><a href="#">[Chapter 3] "Pierce the God"</a></li>
+      <li><a href="#">[Lore] Thunder Prayer</a></li>
     </ul>
   </aside>
 
-  <div class="tagline">
-    <span>神々の残響が、いま</span><br><span class="highlight">目を覚ます。</span>
-  </div>
+  <aside class="sidebar collapsible">
+    <div onclick="toggleSidebar()" style="text-align:right; font-size:1.5em;">×</div>
+    <h2>News</h2>
+    <ul>
+      <li><a href="#">[Update] New character revealed!</a></li>
+      <li><a href="#">[Chapter 3] "Pierce the God"</a></li>
+      <li><a href="#">[Lore] Thunder Prayer</a></li>
+    </ul>
+  </aside>
 
-  <div class="content-wrapper">
-    <section class="news-section">
+  <div class="main-content"></div>
+
+  <section class="news-section">
+    <div class="news-section-inner">
       <h2>最新記事</h2>
-      <article>
-        <h3>雷祈の血を継ぐ者</h3>
-        <p>神々が遺した力、それを受け継ぐ者が再び目を覚ます。女王イシャナ、15歳。いまその物語が始まる。</p>
-      </article>
-      <article>
-        <h3>イシャナ陛下、公式イラスト公開</h3>
-        <p>赤髪の姫、神の血を継ぐ唯一の存在。その美貌と威厳が世界を魅了する。</p>
-      </article>
-      <article>
-        <h3>エラシア王国とは？</h3>
-        <p>七つに分かれた古代の神王領。その中心たる王国と女王の秘密に迫る。</p>
-      </article>
-    </section>
-  </div>
+      <article><h3>雷祈の血を継ぐ者</h3><p>神々が遺した力、それを受け継ぐ者が再び目を覚ます。</p></article>
+      <article><h3>イシャナ陛下、公式イラスト公開</h3><p>赤髪の姫、神の血を継ぐ唯一の存在。</p></article>
+      <article><h3>エラシア王国とは？</h3><p>七つに分かれた古代の神王領。その中心に迫る。</p></article>
+    </div>
+  </section>
 
-  <footer>
-    &copy; 2025 NOVA Series. All rights reserved.
-  </footer>
+  <footer>&copy; 2025 NOVA Series. All rights reserved.</footer>
 
   <script>
     function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
+      const sidebar = document.querySelector('.sidebar.collapsible');
       sidebar.classList.toggle('active');
     }
-
-    const backgrounds = [
-      { url: "images/title_VIII.png", line: ["その血が、", "運命を変える。"] },
-      { url: "images/title_I.png", line: ["消された歴史が、", "蘇る。"] },
-      { url: "images/title_II.png", line: ["光の意志が、", "世界を導く。"] },
-      { url: "images/title_VI.png", line: ["闇の底で、", "名もなき神が目を開ける。"] },
-      { url: "images/title_VII.png", line: ["最後の剣が、", "静かに天を裂く。"] }
-    ];
-
-    let index = 0;
-
-    function cycleBackground() {
-      const bg = document.querySelector('.background-layer');
-      const tagline = document.querySelector('.tagline');
-      const { url, line } = backgrounds[index];
-
-      const img = new Image();
-      img.onload = () => {
-        bg.style.backgroundImage = `url('${url}')`;
-        bg.style.backgroundRepeat = "no-repeat";
-        bg.style.backgroundPosition = "top center";
-        bg.style.backgroundSize = "cover";
-      };
-      img.src = url;
-
-      if (tagline) {
-        tagline.innerHTML = `<span>${line[0]}</span><br><span class="highlight">${line[1]}</span>`;
-      }
-
-      index = (index + 1) % backgrounds.length;
-      setTimeout(cycleBackground, 10000);
-    }
-
-    window.addEventListener('load', cycleBackground);
   </script>
 </body>
 </html>
