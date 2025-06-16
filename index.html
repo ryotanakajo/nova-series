@@ -159,18 +159,13 @@ nav {
     }
 
 .news-section {
-  margin-top: 60px; /* ✅ 背景の下に配置されるように */
+  width: 100vw;             /* ✅ 全体幅に広げる */
+  margin: 0;                /* ✅ 左のズレをリセット */
+  padding: 40px 20px 40px 20vw;  /* ✅ 左に20vw空けてsidebar避ける */
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 40px 20px;
   color: white;
   box-sizing: border-box;
-  width: 75vw;
-  margin-left: 20vw;
 }
-
-
-
-
     .news-section h2 {
       font-size: 1.8em;
       margin-bottom: 10px;
