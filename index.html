@@ -180,13 +180,18 @@ nav {
       margin-bottom: 20px;
     }
 
-    footer {
-      background-color: #1a1a1a;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
-    }
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+  width: 100vw;       /* ✅ 横幅ぜんぶに拡大 */
+  margin: 0;          /* ✅ 左右マージンリセット */
+  box-sizing: border-box;
+  position: relative;   /* ← 安全のため */
+z-index: 1;
+}
    @font-face {
       font-family: 'Kyokasho';
       src: local('Hannari'), local('Yu Mincho'), local('游明朝'), serif;
