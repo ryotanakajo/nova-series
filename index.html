@@ -279,19 +279,59 @@ header {
 }
 
 /* モバイル対応 */
+.hamburger {
+  display: none;
+  font-size: 2em;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1100;
+}
+
+.sidebar.collapsible {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 100vh;
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  z-index: 1001;
+  box-sizing: border-box;
+}
+
+.sidebar.collapsible.active {
+  display: block;
+}
+
+.close-btn {
+  font-size: 1.5em;
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* スマホでのみ表示 */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding: 10px 20px;
+  .hamburger {
+    display: block;
   }
 
-  .header-right {
-    justify-content: center;
-    margin-top: 10px;
+  .sidebar {
+    display: none !important; /* ← 固定サイドバーを非表示にする */
+  }
+
+  .sidebar.collapsible {
+    display: none;
   }
 }
+
+
 
   </style>
 </head>
@@ -408,6 +448,22 @@ window.addEventListener('load', () => {
   cycleBackground();
 });
 </script>
+  <script>
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar.collapsible');
+  sidebar.classList.toggle('active');
+}
+</script>
+<div class="hamburger" onclick="toggleSidebar()">☰</div>
 
+<aside class="sidebar collapsible">
+  <div class="close-btn" onclick="toggleSidebar()">×</div>
+  <h2>News</h2>
+  <ul>
+    <li><a href="#">[Update] New character revealed!</a></li>
+    <li><a href="#">[Chapter 3] "Pierce the God" now live</a></li>
+    <li><a href="#">[Lore] The five stages of Thunder Prayer</a></li>
+  </ul>
+</aside>
 </body>
 </html>
