@@ -29,11 +29,16 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
 }
 .content-wrapper {
+  position: relative;
   width: 1920px;
   height: 2160px;
   margin: 0 auto;
-  position: relative;
+  background: url('/images/ishana_main.png') no-repeat center top;
+  background-size: cover;
+  background-attachment: scroll; /* ← スクロールと一緒に動く */
+  z-index: 0;
 }
+
 
 
 .background-layer {
@@ -183,7 +188,7 @@ nav {
 
     .tagline {
       position: absolute;
-      top: 100px;
+      top: 300px;
       right: 10px;
       writing-mode: vertical-rl;
       text-orientation: upright;
