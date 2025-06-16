@@ -99,11 +99,14 @@ nav {
       color: #e63946;
     }
 
-    .content-wrapper {
-      position: relative;
-      z-index: 1;
-    }
-
+.content-wrapper {
+  position: relative;
+  width: 1920px;
+  min-height: 100vh; /* ✅ 基本表示域に対応 */
+  padding-bottom: 400px; /* ✅ news-section 分の余白を確保（調整可） */
+  margin: 0 auto;
+  z-index: 1;
+}
     .spacer {
       height: 110vh;
       width: 100%;
@@ -315,8 +318,7 @@ header {
           <li><a href="#">[Lore] The five stages of Thunder Prayer</a></li>
         </ul>
       </aside>
-      
-      </main>
+    </div>
     </div>
   </div>
         <section class="news-section">
