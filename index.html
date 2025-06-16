@@ -160,12 +160,19 @@ nav {
 
 .news-section {
   width: 100vw;
-  padding: 40px 20px;
-  padding-left: 20vw; /* ← sidebarの幅分を避ける */
   background-color: rgba(0, 0, 0, 0.85);
   color: white;
   box-sizing: border-box;
+  padding: 40px 0;
 }
+
+.news-section-inner {
+  padding: 0 20px;
+  margin-left: 20vw;       /* ✅ サイドバー分ずらす */
+  width: 75vw;             /* ✅ サイドバーを避けた幅 */
+  box-sizing: border-box;
+}
+
     .news-section h2 {
       font-size: 1.8em;
       margin-bottom: 10px;
@@ -321,6 +328,7 @@ header {
     </div>
   </div>
         <section class="news-section">
+          <div class="news-section-inner">
           <h2>最新記事</h2>
           <article>
             <h3>雷祈の血を継ぐ者</h3>
@@ -334,6 +342,7 @@ header {
             <h3>エラシア王国とは？</h3>
             <p>七つに分かれた古代の神王領。その中心たる王国と女王の秘密に迫る。</p>
           </article>
+          </div>
         </section>
 
   <footer>
