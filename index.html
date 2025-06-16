@@ -42,9 +42,9 @@ html, body {
 .background-layer {
   position: absolute;
   top: 0;
-  left: 20vw;     /* ✅ sidebar と一致させる */
-  width: 80vw;    /* ✅ 残りの幅に調整（100% - 20vw） */
-  min-height: 2160px; /* ← 縦スクロール対策 */
+  left: 20vw;
+  width: 80vw;
+  height: 2160px;
   background-image: url('/images/title_I.png');
   background-repeat: no-repeat;
   background-position: top center;
@@ -156,13 +156,15 @@ nav {
     }
 
 .news-section {
-  width: 75vw;
-  margin-left: 25vw; /* ← sidebarの幅と揃える */
-  background-color: rgba(0, 0, 0, 0.85); /* ← 読みやすく */
+  margin-top: 2160px; /* ✅ 背景の下に配置されるように */
+  background-color: rgba(0, 0, 0, 0.85);
   padding: 40px 20px;
   color: white;
   box-sizing: border-box;
+  width: 75vw;
+  margin-left: 20vw;
 }
+
 
 
 
