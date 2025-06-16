@@ -361,39 +361,42 @@ header {
   ];
 
   let index = 0;
-  function cycleBackground() {
-    const bg = document.querySelector('.background-layer');
-    const tagline = document.querySelector('.tagline');
-    const { url, line } = backgrounds[index];
+function cycleBackground() {
+  const bg = document.querySelector('.background-layer');
+  const tagline = document.querySelector('.tagline');
+  const { url, line } = backgrounds[index];
 
-    if (bg) {
-      bg.style.background = `url('${url}') no-repeat top center`;
-      bg.style.backgroundSize = "cover";
-    }
-
-    if (tagline) {
-      tagline.innerHTML = `
-        <span>${line[0]}</span><br><span class="highlight">${line[1]}</span>
-      `;
-    }
-
-    index = (index + 1) % backgrounds.length;
-    setTimeout(cycleBackground, 10000);
+  if (bg) {
+    // 前の背景をリセットしてから設定
+    bg.style.background = ""; // ← 完全にリセット
+    bg.style.backgroundImage = `url('${url}')`;
+    bg.style.backgroundRepeat = "no-repeat";
+    bg.style.backgroundPosition = "top center";
+    bg.style.backgroundSize = "cover";
   }
 
-  window.addEventListener('DOMContentLoaded', cycleBackground);
-</script>
+  if (tagline) {
+    tagline.innerHTML = `
+      <span>${line[0]}</span><br><span class="highlight">${line[1]}</span>
+    `;
+  }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        const bg = document.querySelector('.background-layer');
-        if (bg) {
-          console.log("背景切り替え開始");
-          bg.style.background = "url('/images/queen_red.png') no-repeat top center";
-          bg.style.backgroundSize = "cover";
-        }
-      }, 10000);
-    });
+  index = (index + 1) % backgrounds.length;
+  setTimeout(cycleBackground, 10000);
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const bg = document.querySelector('.background-layer');
+    if (bg) {
+      console.log("背景切り替え開始");
+      bg.style.background = "url('/images/queen_red.png') no-repeat top center";
+      bg.style.backgroundSize = "cover";
+    }
+  }, 10000);
+});
+
   </script>
 </body>
 </html>
