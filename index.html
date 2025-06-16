@@ -46,7 +46,7 @@ html, body {
   width: 75vw;
   height: 100%;
   background: url('/images/title_I.png') no-repeat center top;
-  background-size: cover;
+  background-size: 100% auto;;
   z-index: -9999;
 }
 
@@ -384,7 +384,13 @@ header {
     setTimeout(cycleBackground, 10000);
   }
 
-  window.addEventListener('DOMContentLoaded', cycleBackground);
+window.addEventListener('load', () => {
+  const bg = document.querySelector('.background-layer');
+  const fullHeight = document.body.scrollHeight;
+  if (bg) {
+    bg.style.height = `${fullHeight}px`;
+  }
+});
 </script>
 
 </body>
