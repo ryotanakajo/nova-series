@@ -199,6 +199,12 @@
       const sidebar = document.querySelector('.sidebar.collapsible');
       sidebar.classList.toggle('active');
     }
+    window.addEventListener('DOMContentLoaded', () => {
+  const bg = document.querySelector('.background-layer');
+  if (bg) {
+    bg.style.height = `${document.body.scrollHeight}px`;
+  }
+});
   </script>
 </body>
 </html>
