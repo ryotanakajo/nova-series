@@ -39,13 +39,14 @@ html, body {
 .background-layer {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
+  left: 25vw; /* ← sidebar の幅ぶん右にずらす */
+  width: 75vw; /* ← sidebar を除いた幅だけ表示 */
   height: 100vh;
   background: url('/images/ishana_main.png') no-repeat center center;
   background-size: cover;
-  z-index: -9999; /* ✅ sidebar よりさらに後ろに */
+  z-index: -9999;
 }
+
 
 header {
   position: fixed;
@@ -148,11 +149,16 @@ nav {
         z-index: 1;
     }
 
-    .news-section {
-      opacity: 1 !important;
-      display: block !important;
-      transform: none !important;
-    }
+.news-section {
+  width: 75vw;
+  margin-left: 25vw; /* ← sidebarの幅と揃える */
+  background-color: rgba(0, 0, 0, 0.85); /* ← 読みやすく */
+  padding: 40px 20px;
+  color: white;
+  box-sizing: border-box;
+}
+
+
 
     .news-section h2 {
       font-size: 1.8em;
@@ -301,8 +307,10 @@ header {
           <li><a href="#">[Lore] The five stages of Thunder Prayer</a></li>
         </ul>
       </aside>
-
-      <main class="main-content">
+      
+      </main>
+    </div>
+  </div>
         <section class="news-section">
           <h2>最新記事</h2>
           <article>
@@ -318,9 +326,6 @@ header {
             <p>七つに分かれた古代の神王領。その中心たる王国と女王の秘密に迫る。</p>
           </article>
         </section>
-      </main>
-    </div>
-  </div>
 
   <footer>
     &copy; 2025 NOVA Series. All rights reserved.
