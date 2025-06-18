@@ -221,8 +221,8 @@ nav a {
     const bg = document.querySelector('.background-layer');
     const news = document.querySelector('.news-section');
     if (bg && news) {
-      const rect = bg.getBoundingClientRect();
-      news.style.marginTop = rect.height + 'px';
+      const height = bg.offsetHeight; // 表示された背景の高さ
+      news.style.marginTop = `${height}px`;
     }
   }
 
