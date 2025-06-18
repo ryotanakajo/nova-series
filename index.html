@@ -20,13 +20,15 @@
   top: 0;
   left: 20vw;
   width: 80vw;
-  aspect-ratio: 16 / 9;
-  background: url('images/title_I.png') no-repeat center center;
-  background-size: cover;
+  height: auto;
+  aspect-ratio: 9 / 16; /* ← 横に細長い画像の場合はこちら */
+  background: url('images/title_I.png') no-repeat top center;
+  background-size: contain; /* ← 画像全部見せたいなら contain */
+  background-repeat: no-repeat;
   z-index: -1;
+  pointer-events: none;
 }
-
-
+    
    header {
   position: fixed;
   top: 0;
