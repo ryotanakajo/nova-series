@@ -26,19 +26,33 @@
       z-index: -1;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 30px;
-      background: transparent;
-      z-index: 1000;
-    }
+   header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3vw; /* ← 画面幅に応じた余白に変更 */
+  background: transparent;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  gap: 2vw; /* ← 固定値よりも画面に応じて調整される */
+  flex-wrap: wrap; /* ← 画面幅が狭いときは折り返すように */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap; /* ← 改行させず詰めて表示 */
+}
 
     header img {
       height: 60px;
