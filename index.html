@@ -221,8 +221,7 @@ nav a {
     const news = document.querySelector('.news-section');
     if (bg && news) {
       const rect = bg.getBoundingClientRect();
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      news.style.marginTop = (rect.height + scrollTop) + 'px';
+      news.style.marginTop = rect.height + 'px';
     }
   }
 
@@ -234,5 +233,6 @@ nav a {
   window.addEventListener('DOMContentLoaded', updateLayout);
   window.addEventListener('resize', updateLayout);
 </script>
+
 </body>
 </html>
