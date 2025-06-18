@@ -20,7 +20,8 @@
       top: 0;
       left: 20vw;
       width: 80vw;
-      height: 2160px;
+      height: auto;
+      aspect-ratio: 16 / 9;
       background: url('images/title_I.png') no-repeat top center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -210,29 +211,17 @@ nav a {
   <footer>&copy; 2025 NOVA Series. All rights reserved.</footer>
 
 <script>
-  function resizeBackground() {
-    const bg = document.querySelector('.background-layer');
-    if (bg) {
-      bg.style.height = `${document.body.scrollHeight}px`;
-    }
-  }
-
   function adjustNewsPosition() {
     const bg = document.querySelector('.background-layer');
     const news = document.querySelector('.news-section');
     if (bg && news) {
-      const height = bg.offsetHeight; // 表示された背景の高さ
+      const height = bg.offsetHeight; // 画像の実際の高さだけ取得
       news.style.marginTop = `${height}px`;
     }
   }
 
-  function updateLayout() {
-    resizeBackground();
-    adjustNewsPosition();
-  }
-
-  window.addEventListener('DOMContentLoaded', updateLayout);
-  window.addEventListener('resize', updateLayout);
+  window.addEventListener('DOMContentLoaded', adjustNewsPosition);
+  window.addEventListener('resize', adjustNewsPosition);
 </script>
 
 </body>
