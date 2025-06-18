@@ -76,7 +76,6 @@
     }
 
 .news-section {
-  margin-top: 2160px; /* ← 背景画像の高さと同じ */
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.85);
   color: white;
@@ -195,17 +194,31 @@
 
   <footer>&copy; 2025 NOVA Series. All rights reserved.</footer>
 
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.querySelector('.sidebar.collapsible');
-      sidebar.classList.toggle('active');
+<script>
+  function resizeBackground() {
+    const bg = document.querySelector('.background-layer');
+    if (bg) {
+      bg.style.height = `${document.body.scrollHeight}px`;
     }
-    window.addEventListener('DOMContentLoaded', () => {
-  const bg = document.querySelector('.background-layer');
-  if (bg) {
-    bg.style.height = `${document.body.scrollHeight}px`;
   }
-});
-  </script>
+
+  function adjustNewsPosition() {
+    const bg = document.querySelector('.background-layer');
+    const news = document.querySelector('.news-section');
+    if (bg && news) {
+      const rect = bg.getBoundingClientRect();
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      news.style.marginTop = (rect.height + scrollTop) + 'px';
+    }
+  }
+
+  function updateLayout() {
+    resizeBackground();
+    adjustNewsPosition();
+  }
+
+  window.addEventListener('DOMContentLoaded', updateLayout);
+  window.addEventListener('resize', updateLayout);
+</script>
 </body>
 </html>
