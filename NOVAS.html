@@ -39,6 +39,14 @@ body {
     background: url('images/your-image.png') center/contain no-repeat;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;     /* 縦並び */
+    justify-content: flex-end;  /* 下に寄せる */
+    align-items: center;        /* 横方向の中央揃え */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;         /* 中の文字を中央揃え */
+    }
     }
     .section h2 {
       font-size: 2em;
@@ -89,9 +97,6 @@ body {
     <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">NOVA Series</a></h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#nations">Nations</a>
-      <a href="#gods">Gods</a>
-      <a href="#timeline">Timeline</a>
     </nav>
   </header>
   <div class="sections-container">
