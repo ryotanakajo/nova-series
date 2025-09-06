@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character | NOVAX Series</title>
+  <style>
+    body {
+      margin: 0;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      background-color: #000;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('../../images/kykloma1.AVIF') no-repeat center center / cover;
+      opacity: 0.25;
+      z-index: -1;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin: 0;
+    }
+    nav a {
+      color: #e63946;
+      margin-right: 20px;
+      text-decoration: none;
+    }
+    .section {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid #999;
+      padding: 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .grid-item:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+.detail {
+  display: none;              /* 初期は非表示 */
+  margin-top: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 10px;
+
+  /* 横並びレイアウト（ただし表示されるときに有効） */
+  align-items: flex-start;
+  gap: 40px;
+  text-align: left;
+}
+.detail img {
+  width: 500px;   /* 横幅を500pxに統一 */
+  height: auto;   /* 縦は比率に合わせて自動調整 */
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+    .detail .desc {
+      flex: 1;
+    }
+    .detail .desc h3 {
+      margin-top: 0;
+      font-size: 2em;
+      color: #e63946;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="../../NOVAX.html" style="text-decoration: none; color: inherit;">NOVAX Series</a></h1>
+    <nav>
+      <a href="character.html">キャラクター</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h2>キャラクター一覧</h2>
+
+    <!-- 横3×縦2の格子 -->
+    <div class="grid-container">
+      <div class="grid-item" onclick="showDetail('char1')">リュージ</div>
+      <div class="grid-item" onclick="showDetail('char2')">アリア</div>
+      <div class="grid-item" onclick="showDetail('char3')">キャラ3</div>
+      <div class="grid-item" onclick="showDetail('char4')">キャラ4</div>
+      <div class="grid-item" onclick="showDetail('char5')">キャラ5</div>
+      <div class="grid-item" onclick="showDetail('char6')">キャラ6</div>
+    </div>
+
+    <!-- 詳細表示エリア -->
+    <div id="detail-area">
+      <div id="char1" class="detail">
+        <img src="../images/aria1.avif" alt="キャラ1">
+        <div class="desc">
+          <h3>リュージ</h3>
+          <p>キャラ1の説明文がここに入ります。</p>
+        </div>
+      </div>
+      <div id="char2" class="detail">
+        <img src="../../images/aria1.avif" alt="アリア">
+        <div class="desc">
+          <h3>アリア</h3>
+          <p>キャラ2の説明文がここに入ります。</p>
+        </div>
+      </div>
+      <!-- char3〜char6 も同じ形で追加 -->
+    </div>
+  </div>
+
+  <script>
+function showDetail(id) {
+  document.querySelectorAll('.detail').forEach(el => el.style.display = 'none');
+  document.getElementById(id).style.display = 'flex'; // クリックされたやつだけflexで表示
+}
+
+  </script>
+</body>
+</html>
