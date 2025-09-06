@@ -32,14 +32,15 @@ body {
     nav a:hover {
       color: #e63946;
     }
-    .section {
-      max-width: 1200px;      /* ← ここの値が今の見た目を維持する幅（実測） */
-      margin: 20px auto; 
-      padding: 60px 40px;
-      background-color: rgba(0, 0, 0, 0.6);
-      margin: 20px;
-      border-radius: 8px;
-    }
+.section {
+  max-width: 1900px;
+  margin: 20px auto;        /* 中央寄せ */
+  padding: 60px 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  height: 400px;            /* ← 高さ固定 */
+  box-sizing: border-box;   /* ← paddingを含めて600pxに収める */
+}
     .section h2 {
       font-size: 2em;
       margin-bottom: 20px;
@@ -49,12 +50,12 @@ body {
       line-height: 1.8em;
     }
     .section.ishana {
-  background: url('images/title_O.png') center/cover no-repeat;
-  background-position: center 5%;
+  background: url('images/NOVAS.avif') center/cover no-repeat;
+  background-position: center;
 }
 .section.nova1 {
-  background: url('images/NOVAX.png') center/cover no-repeat;
-  background-position: center 35%;
+  background: url('images/NOVAX.avif') center/cover no-repeat;
+  background-position: center;
 }
 .section.empty {
   background-color: rgba(0, 0, 0, 0.5); /* 半透明グレー */
@@ -69,12 +70,6 @@ body {
 <body>
   <header>
     <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">NOVA Series</a></h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="#nations">Nations</a>
-      <a href="#gods">Gods</a>
-      <a href="#timeline">Timeline</a>
-    </nav>
   </header>
   <div class="section ishana" id="ishana-extra">
     <h2>
@@ -97,12 +92,3 @@ body {
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

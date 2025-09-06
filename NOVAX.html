@@ -33,12 +33,14 @@ body {
       color: #e63946;
     }
     .section {
-      max-width: 1200px;      /* ← ここの値が今の見た目を維持する幅（実測） */
+      max-width: 1900px;
       margin: 20px auto; 
       padding: 60px 40px;
       background-color: rgba(0, 0, 0, 0.6);
       margin: 20px;
       border-radius: 8px;
+      height: 400px;            /* ← 高さ固定 */
+      box-sizing: border-box;   /* ← paddingを含めて600pxに収める */
     }
     .section h2 {
       font-size: 2em;
@@ -49,7 +51,7 @@ body {
       line-height: 1.8em;
     }
     .section.ishana {
-  background: url('images/gray.png') center/cover no-repeat;
+  background: url('images/kykloma1.avif') center/cover no-repeat;
   background-position: center 18%;
 }
 .section.nova1 {
@@ -72,9 +74,6 @@ body {
     <h1><a href="../../top_world.html" style="text-decoration: none; color: inherit;">NOVAX Series</a></h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#nations">Nations</a>
-      <a href="#gods">Gods</a>
-      <a href="#timeline">Timeline</a>
     </nav>
   </header>
 
@@ -90,7 +89,7 @@ body {
 <div class="section nova1" id="nova1">
   <h2>
     ネクスエクス・リディクタ<br>
-    <span class="subtitle">――</span>
+    <span class="subtitle">―リメインズ・オブ・ネーションズ―</span>
   </h2>
     <ul>
     <li><a href="world/nova1/summary.html">▶ あらすじ・世界観</a></li>
