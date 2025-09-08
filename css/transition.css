@@ -1,0 +1,26 @@
+.page-transition {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: black;
+  z-index: 2000;
+  transform: scaleY(1);              /* ← 初期は覆っている状態 */
+  transition: transform 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.page-transition.top {
+  top: 0;
+  transform-origin: top;
+}
+
+.page-transition.bottom {
+  bottom: 0;
+  transform-origin: bottom;
+}
+
+/* 開いて消える用クラス */
+.page-transition.ready {
+  transform: scaleY(0);              /* ← 開くとき */
+}

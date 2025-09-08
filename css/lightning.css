@@ -1,0 +1,17 @@
+.lightning-line {
+  fill: none;
+  stroke: #0ff;  /* ネオンブルー */
+  stroke-width: 3;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: bolt 0.2s linear forwards;
+  filter: drop-shadow(0 0 10px #0ff)
+          drop-shadow(0 0 20px #0ff)
+          drop-shadow(0 0 40px #fff);
+}
+
+@keyframes bolt {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

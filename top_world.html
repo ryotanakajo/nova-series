@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" content="notranslate">
   <title>World | NOVA Series</title>
+
+  <!-- ページ遷移アニメーション -->
+  <link rel="stylesheet" href="css/transition.css">
+
   <style>
-body {
-  background: url('images/bg_stone_texture.jpg') repeat;
-  background-size: 300px auto; /* 小さめに敷き詰めると高精細でも破綻しない */
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-}
+    body {
+      background: url('images/bg_stone_texture.jpg') repeat;
+      background-size: 300px auto; /* 小さめに敷き詰めると高精細でも破綻しない */
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
     header {
       display: flex;
       align-items: center;
@@ -32,15 +37,15 @@ body {
     nav a:hover {
       color: #e63946;
     }
-.section {
-  max-width: 1900px;
-  margin: 20px auto;        /* 中央寄せ */
-  padding: 60px 40px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
-  height: 400px;            /* ← 高さ固定 */
-  box-sizing: border-box;   /* ← paddingを含めて600pxに収める */
-}
+    .section {
+      max-width: 1900px;
+      margin: 20px auto;
+      padding: 60px 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      height: 400px;
+      box-sizing: border-box;
+    }
     .section h2 {
       font-size: 2em;
       margin-bottom: 20px;
@@ -50,27 +55,33 @@ body {
       line-height: 1.8em;
     }
     .section.ishana {
-  background: url('images/NOVAS.avif') center/cover no-repeat;
-  background-position: center;
-}
-.section.nova1 {
-  background: url('images/NOVAX.avif') center/cover no-repeat;
-  background-position: center;
-}
-.section.empty {
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明グレー */
-}
+      background: url('images/NOVAS.avif') center/cover no-repeat;
+    }
+    .section.nova1 {
+      background: url('images/NOVAX.avif') center/cover no-repeat;
+    }
+    .section.empty {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
     .subtitle {
-  font-size: 0.7em;
-  color: #ccc;
-  font-weight: normal;
-}
+      font-size: 0.7em;
+      color: #ccc;
+      font-weight: normal;
+    }
   </style>
 </head>
 <body>
+  <!-- ページ遷移アニメーション用 -->
+  <div class="page-transition top"></div>
+  <div class="page-transition bottom"></div>
+  <div class="background-layer"></div>
+
   <header>
-    <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">NOVA Series</a></h1>
+    <h1>
+      <a href="index.html" style="text-decoration: none; color: inherit;">NOVA Series</a>
+    </h1>
   </header>
+
   <div class="section ishana" id="ishana-extra">
     <h2>
       NOVAS<br>
@@ -80,15 +91,18 @@ body {
       <li><a href="NOVAS.html">▶ 一覧</a></li>
     </ul>
   </div>
-<div class="section nova1" id="nova1">
-  <h2>
-    NOVAX<br>
-    <span class="subtitle">―ノヴァクロス―</span>
-  </h2>
+
+  <div class="section nova1" id="nova1">
+    <h2>
+      NOVAX<br>
+      <span class="subtitle">―ノヴァクロス―</span>
+    </h2>
     <ul>
-    <li><a href="NOVAX.html">▶ 一覧</a></li>
-  </ul>
-</div>
+      <li><a href="NOVAX.html">▶ 一覧</a></li>
+    </ul>
   </div>
+
+  <!-- 外部アニメーションJS -->
+  <script src="js/transition.js"></script>
 </body>
 </html>

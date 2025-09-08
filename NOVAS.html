@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" content="notranslate">
-  <title>World | NOVA Series</title>
+  <title>NOVAS | NOVA Series</title>
+
+  <!-- ページ遷移アニメーションCSS -->
+  <link rel="stylesheet" href="css/transition.css">
+
   <style>
-body {
-  background: url('images/bg_stone_texture.jpg') repeat;
-  background-size: 300px auto; /* 小さめに敷き詰めると高精細でも破綻しない */
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-}
+    body {
+      background: url('images/bg_stone_texture.jpg') repeat;
+      background-size: 300px auto;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
     header {
       display: flex;
       align-items: center;
@@ -32,147 +37,112 @@ body {
     nav a:hover {
       color: #e63946;
     }
-    .section {
-    width: 400px;
-    height: 750px;
-    margin: 20px auto;
-    background: url('images/your-image.png') center/contain no-repeat;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;     /* 縦並び */
-    justify-content: flex-end;  /* 下に寄せる */
-    align-items: center;        /* 横方向の中央揃え */
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;         /* 中の文字を中央揃え */
+    .sections-container {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      padding: 20px;
     }
+    .section {
+      width: 400px;
+      height: 750px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
     }
     .section h2 {
-      font-size: 2em;
+      font-size: 1.5em;
       margin-bottom: 20px;
     }
-.section p {
-  font-size: 1.1em;
-  line-height: 1.8em;
-}   /* ←これで閉じる */
-
-.sections-container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
+    .section p {
+      font-size: 1.1em;
+      line-height: 1.8em;
+    }
     .section.ishana {
-  background: url('images/novas8.avif') center/cover no-repeat;
-  background-position: center;
-}
-.section.nova1 {
-  background: url('images/novas1.avif') center/cover no-repeat;
-  background-position: center;
-}
-.section.nova2 {
-  background: url('images/novas2.avif') center/cover no-repeat;
-  background-position: center;
-}
-.section.nova6 {
-  background: url('images/novas6.avif') center/cover no-repeat;
-  background-position: center;
-}
-.section.nova7 {
-  background: url('images/novas7.avif') center/cover no-repeat;
-  background-position: center;
-}
-.section.empty {
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明グレー */
-}
+      background: url('images/novas8.avif') center/cover no-repeat;
+    }
+    .section.nova1 {
+      background: url('images/novas1.avif') center/cover no-repeat;
+    }
+    .section.nova2 {
+      background: url('images/novas2.avif') center/cover no-repeat;
+    }
+    .section.nova6 {
+      background: url('images/novas6.avif') center/cover no-repeat;
+    }
+    .section.nova7 {
+      background: url('images/novas7.avif') center/cover no-repeat;
+    }
+    .section.empty {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
     .subtitle {
-  font-size: 0.7em;
-  color: #ccc;
-  font-weight: normal;
-}
+      font-size: 0.7em;
+      color: #ccc;
+      font-weight: normal;
+    }
   </style>
 </head>
 <body>
+  <!-- ページ遷移アニメーション用 -->
+  <div class="page-transition top"></div>
+  <div class="page-transition bottom"></div>
+  <div class="background-layer"></div>
+
   <header>
-    <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">NOVA Series</a></h1>
+    <h1><a href="index.html" style="text-decoration: none; color: inherit;">NOVA Series</a></h1>
     <nav>
       <a href="index.html">Home</a>
     </nav>
   </header>
+
   <div class="sections-container">
-  <div class="section ishana" id="ishana-extra">
-    <h2>
-      イシャナ・エラシア EXTRA<br>
-      <span class="subtitle">ーファースト・ノヴァー</span>
-    </h2>
-    <ul>
-      <li><a href="NOVAS/ishana/summary.html">▶ あらすじ・世界観</a></li>
-    </ul>
-  </div>
-<div class="section nova1" id="nova1">
-  <h2>
-    レクスエクス・ノヴァ I<br>
-    <span class="subtitle">―スカー・オブ・オリジン―</span>
-  </h2>
-    <ul>
-    <li><a href="NOVAS/nova1/summary.html">▶ あらすじ・世界観</a></li>
-  </ul>
-</div>
+    <div class="section ishana" id="ishana-extra">
+      <h2>イシャナ・エラシア EXTRA<br><span class="subtitle">ーファースト・ノヴァー</span></h2>
+      <ul><li><a href="NOVAS/ishana/summary.html">▶ あらすじ・世界観</a></li></ul>
+    </div>
 
-<div class="section nova2" id="nova2">
-  <h2>
-    ヴェルエクス・ノヴァ II<br>
-    <span class="subtitle">ーサージ・オブ・サーガー</span>
-  </h2>
-  <ul>
-    <li><a href="NOVAS/nova2/summary.html">▶ あらすじ・世界観</a></li>
-  </ul>
-</div>
+    <div class="section nova1" id="nova1">
+      <h2>レクスエクス・ノヴァ I<br><span class="subtitle">―スカー・オブ・オリジン―</span></h2>
+      <ul><li><a href="NOVAS/nova1/summary.html">▶ あらすじ・世界観</a></li></ul>
+    </div>
 
-  <div class="section" nova3 id="nova3">
-    <h2>
-      リヴォエクス・ノヴァ III<br>
-      <span class="subtitle">―スパイラル・トゥ・エンド―</span>
-    </h2>
-      <ul>
-    <li><a href="NOVAS/nova3/summary.html">▶ あらすじ・世界観</a></li>
-  </ul>
-  </div>
-  
-  <div class="section"><h2>制作中</h2></div>
-  <div class="section">
-  <h2>
-    ネクスエクス・ノヴァ V<br>
-    <span class="subtitle">―ブラック・エコー―</span>
-  </h2>
-    <ul>
-      <li><a href="NOVAS/nova3/summary.html">▶ あらすじ・世界観</a></li>
-    </ul>
-  </div>
-<div class="section nova6" id="nova6">
-  <h2>
-    アバドエクス・ノヴァ VI<br>
-    <span class="subtitle">―コラプス・オブ・ピラー—</span>
-  </h2>
-  <ul>
-    <li><a href="NOVAS/nova6/summary.html">▶ あらすじ・世界観</a></li>
-  </ul>
-</div>
+    <div class="section nova2" id="nova2">
+      <h2>ヴェルエクス・ノヴァ II<br><span class="subtitle">ーサージ・オブ・サーガー</span></h2>
+      <ul><li><a href="NOVAS/nova2/summary.html">▶ あらすじ・世界観</a></li></ul>
+    </div>
 
-<div class="section nova7" id="nova7">
-  <h2>
-    カインエクス・ノヴァ VII<br>
-  <span class="subtitle">—ディヴァイン・スレイヤー—</span>
-  </h2>
-  <ul>
-    <li><a href="NOVAS/nova7/summary.html">▶ あらすじ・世界観</a></li>
-  </ul>
-</div>
-  
+    <div class="section" id="nova3">
+      <h2>リヴォエクス・ノヴァ III<br><span class="subtitle">―スパイラル・トゥ・エンド―</span></h2>
+      <ul><li><a href="NOVAS/nova3/summary.html">▶ あらすじ・世界観</a></li></ul>
+    </div>
+
+    <div class="section empty"><h2>制作中</h2></div>
+
+    <div class="section">
+      <h2>ネクスエクス・ノヴァ V<br><span class="subtitle">―ブラック・エコー―</span></h2>
+      <ul><li><a href="NOVAS/nova3/summary.html">▶ あらすじ・世界観</a></li></ul>
+    </div>
+
+    <div class="section nova6" id="nova6">
+      <h2>アバドエクス・ノヴァ VI<br><span class="subtitle">―コラプス・オブ・ピラー—</span></h2>
+      <ul><li><a href="NOVAS/nova6/summary.html">▶ あらすじ・世界観</a></li></ul>
+    </div>
+
+    <div class="section nova7" id="nova7">
+      <h2>カインエクス・ノヴァ VII<br><span class="subtitle">—ディヴァイン・スレイヤー—</span></h2>
+      <ul><li><a href="NOVAS/nova7/summary.html">▶ あらすじ・世界観</a></li></ul>
+    </div>
   </div>
+
+  <!-- ページ遷移アニメーションJS -->
+  <script src="js/transition.js"></script>
 </body>
 </html>
-
-
-
-
