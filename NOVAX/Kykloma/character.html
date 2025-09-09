@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Character | NOVAX Series</title>
+
+    <!-- ページ遷移アニメーション -->
+     <link rel="stylesheet" href="css/transition.css">
+  
   <style>
     body {
       margin: 0;
@@ -108,7 +112,7 @@
     <div class="grid-container">
       <div class="grid-item" onclick="showDetail('char1')">リュージ</div>
       <div class="grid-item" onclick="showDetail('char2')">アリア</div>
-      <div class="grid-item" onclick="showDetail('char3')">キャラ3</div>
+      <div class="grid-item" onclick="showDetail('char3')">マクス</div>
       <div class="grid-item" onclick="showDetail('char4')">キャラ4</div>
       <div class="grid-item" onclick="showDetail('char5')">キャラ5</div>
       <div class="grid-item" onclick="showDetail('char6')">キャラ6</div>
@@ -117,7 +121,7 @@
     <!-- 詳細表示エリア -->
     <div id="detail-area">
       <div id="char1" class="detail">
-        <img src="../images/aria1.avif" alt="キャラ1">
+        <img src="../images/aria1.avif" alt="リュージ">
         <div class="desc">
           <h3>リュージ</h3>
           <p>キャラ1の説明文がここに入ります。</p>
@@ -130,6 +134,13 @@
           <p>キャラ2の説明文がここに入ります。</p>
         </div>
       </div>
+      <div id="char3" class="detail">
+        <img src="../images/aria1.avif" alt="マクス">
+        <div class="desc">
+          <h3>マクス</h3>
+          <p>キャラ3の説明文がここに入ります。</p>
+        </div>
+      </div>
       <!-- char3〜char6 も同じ形で追加 -->
     </div>
   </div>
@@ -138,6 +149,8 @@
 function showDetail(id) {
   document.querySelectorAll('.detail').forEach(el => el.style.display = 'none');
   document.getElementById(id).style.display = 'flex'; // クリックされたやつだけflexで表示
+  <!-- 外部アニメーションJS -->
+  src="js/transition.js"
 }
 
   </script>
