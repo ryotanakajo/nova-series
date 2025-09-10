@@ -125,7 +125,27 @@
       padding: 20px;
       text-align: center;
     }
-
+    /*共通*/
+      .vertical-text {
+         position: absolute;
+        top: 10%;
+        right: 10%;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        z-index: 200;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .vertical-text.active {
+        opacity: 1;
+      }
+      .highlight {
+        color: red;
+        font-weight: bold;
+      }
     /* スマホ用 */
     @media screen and (max-width: 768px) {
       .sidebar {
@@ -160,6 +180,11 @@
         width: 90%;         /* ← 画面幅に合わせる（好みに応じて調整） */
         max-width: 100%;
         grid-template-columns: 1fr; /* ← スマホは1列表示推奨 */
+      }
+        .vertical-text {
+        top: 5%;
+        right: 5%;
+        font-size: 18px;
       }
     }
   </style>
@@ -199,6 +224,15 @@
       <img src="images/novas2.avif" class="slide">
       <img src="images/novas6.avif" class="slide">
       <div class="lightning"></div>
+        <!-- セリフ群 -->
+      
+      <div class="vertical-text active">
+        <p>「NOVA</p>
+        <p class="highlight"> それが始まる物語」</p>
+        
+      </div>
+      <div class="vertical-text">「誰も知らない戦いがある」</div>
+      <div class="vertical-text">「未来は、君の手に」</div>
     </div>
   </section>
 
@@ -235,11 +269,17 @@
     }
 
     const slides = document.querySelectorAll('.slideshow .slide');
+    const texts  = document.querySelectorAll('.slideshow .vertical-text');
+    const max = Math.min(slides.length, texts.length);
     let index = 0;
     setInterval(() => {
       slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
+      texts[index].classList.remove('active');
+      
+      index = (index + 1) % max;
+      
       slides[index].classList.add('active');
+      texts[index].classList.add('active');
     }, 8000); // 8秒ごとに切替
   </script>
 </body>
