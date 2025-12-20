@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World | NOVA Series</title>
+  <link rel="stylesheet" href="../../css/font.css">
   <style>
     body {
       margin: 0;
@@ -12,6 +14,7 @@
       overflow-x: hidden;
       position: relative;
     }
+
     body::before {
       content: "";
       position: fixed;
@@ -23,56 +26,73 @@
       background-color: #000;
       z-index: -1;
     }
+
     header {
       background-color: rgba(0, 0, 0, 0.3);
       padding: 20px 40px;
     }
+
     h1 {
       font-size: 1.8em;
       margin: 0;
     }
+
     .section {
       padding: 60px 40px;
       background-color: rgba(0, 0, 0, 0.3);
       margin: 20px;
       border-radius: 8px;
     }
+
     .section h2 {
       font-size: 1.8em;
       margin-bottom: 20px;
     }
+
     .section p {
-  font-size: 1.1em;
-  line-height: 1.8em;
-  max-width: 70ch;
-  margin: auto;
-  width: 100%;
-}
+      font-size: 1.1em;
+      line-height: 1.8em;
+      max-width: 70ch;
+      margin: auto;
+      width: 100%;
+    }
+
     a {
       color: #e63946;
     }
-.typewriter {
-  overflow: hidden;
-  display: inline-block;
-  animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
-  white-space: normal;
-  border-right: 0.15em solid #e63946;
-}
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-      to { width: 100% }
+    .typewriter {
+      overflow: hidden;
+      display: inline-block;
+      animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+      white-space: normal;
+      border-right: 0.15em solid #e63946;
     }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
     @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #e63946 }
-}
-      50% { border-color: #e63946 }
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: #e63946;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">NOVA Series</a></h1>
@@ -81,93 +101,253 @@
       <a href="#about-seven-nations">七国連合</a>
       <a href="#gods">エルディア神話</a>
       <a href="#timeline">年表</a>
+      <a href="character.html">キャラクター</a>
     </nav>
   </header>
 
-  
+
 
   <div class="section" id="overview">
-  <div class="typewriter">
-  <h2>World Overview</h2>
-  <p>【あらすじ：イシャナ・エラシア編】<br>
-  3066年、エラシア人とセレフィム人との間で「終焉戦争」が勃発。<br>
-  十一年におよぶ激戦の末、エラシア王国を中心とする連合は敗北し、3087年に終戦を迎える。<br>
-  和平の代償として、帝国時代から築き上げた財と威信の大半を喪失した。<br>
-  連合全体の戦死者はのべ二億七千万人を超え、人口の六割以上が命を落としたと記録されている。<br><br>
-  敗戦の責を負った国王、ルクレオン・エラシア二世は、荒廃した王国の再建に尽力する。<br>
-  しかし政務の重圧と国庫の枯渇、貴族たちの反発により心身をすり減らし、終戦から四年後の3091年、在位のまま崩御する。<br><br>
-  残されたのはただ一人。<br>
-  当時六歳の王女――イシャナ・エラシア。<br>
-  神の血を継ぐ最後の純血として王位を継承した彼女は、実権を奪われたまま“お飾りの姫”として育てられる。<br><br>
-  戦に敗れ、王を失い、民は未来を見失った。<br>
-  だが静かな瓦礫の王宮の奥で、少女はゆっくりと目を覚ましていく。<br><br>
-  やがてその手が、滅びかけた王国をもう一度掴み直すときが来る。<br>
-  ――これは、ひとりの王女が“真の王”へと至るまでの物語。</p>
-</div>
-
-    
-
-  <div class="section" id="about-seven-nations">
     <div class="typewriter">
-      <h2>七国連合とは</h2>
-      <p>
-        かつて、大陸の中心には一つの巨大な国家が存在していた。<br>
-        その名は——エラシア帝国。<br>
-        この帝国は広大な領土と統一された文化を持ち、<br>
-        長きにわたり多くの民と王族を束ねて繁栄を誇っていた。<br>
-        だがある時を境に、帝国は七つの独立した国家へと分かたれた。<br><br>
-        <strong>エラシア王国（Ellasia）</strong>：発祥の地。象徴国家としての役割を持つ。<br>
-        <strong>ヴァステン帝国（Vasten）</strong>：軍事・秩序・技術の大国。<br>
-        <strong>ヤマトカ皇国（Yamatoka）</strong>：東方の霊峰と神殿を抱える神秘の国。<br>
-        <strong>トレミア神聖国（Tremia）</strong>：信仰と神託に支えられた神政国家。<br>
-        <strong>ロゼル連邦（Rozel）</strong>：自由都市の集まりによる貿易国家。<br>
-        <strong>ネブル王領（Nebel）</strong>：知識と契約文化に優れる学問国家。<br>
-        <strong>ルガード公国（Rugard）</strong>：騎士道と武芸の伝統を守る戦士国家。<br><br>
-        国が異なっても、その民は同じ“源”を持つ。<br>
-        だからこそ、彼らは今もなお「エラシア人」と呼ばれている
-      </p>
+      <h2>World Overview</h2>
+      <p>【あらすじ：イシャナ・エラシア編】<br>
+        3066年、エラシア人とセレフィム人との間で「終焉戦争」が勃発。<br>
+        十一年におよぶ激戦の末、エラシア王国を中心とする連合は敗北し、3087年に終戦を迎える。<br>
+        和平の代償として、帝国時代から築き上げた財と威信の大半を喪失した。<br>
+        連合全体の戦死者はのべ二億七千万人を超え、人口の六割以上が命を落としたと記録されている。<br><br>
+        敗戦の責を負った国王、ルクレオン・エラシア二世は、荒廃した王国の再建に尽力する。<br>
+        しかし政務の重圧と国庫の枯渇、貴族たちの反発により心身をすり減らし、終戦から四年後の3091年、在位のまま崩御する。<br><br>
+        残されたのはただ一人。<br>
+        当時六歳の王女――イシャナ・エラシア。<br>
+        神の血を継ぐ最後の純血として王位を継承した彼女は、実権を奪われたまま“お飾りの姫”として育てられる。<br><br>
+        戦に敗れ、王を失い、民は未来を見失った。<br>
+        だが静かな瓦礫の王宮の奥で、少女はゆっくりと目を覚ましていく。<br><br>
+        やがてその手が、滅びかけた王国をもう一度掴み直すときが来る。<br>
+        ――これは、ひとりの王女が“真の王”へと至るまでの物語。</p>
     </div>
+
+
+
+    <div class="section" id="about-seven-nations">
+      <div class="typewriter">
+        <h2>七国連合とは</h2>
+        <p>
+          かつて、大陸の中心には一つの巨大な国家が存在していた。<br>
+          その名は——エラシア帝国。<br>
+          この帝国は広大な領土と統一された文化を持ち、<br>
+          長きにわたり多くの民と王族を束ねて繁栄を誇っていた。<br>
+          だがある時を境に、帝国は七つの独立した国家へと分かたれた。<br><br>
+          <strong>エラシア王国（Ellasia）</strong>：発祥の地。象徴国家としての役割を持つ。<br>
+          <strong>ヴァステン帝国（Vasten）</strong>：軍事・秩序・技術の大国。<br>
+          <strong>ヤマトカ皇国（Yamatoka）</strong>：東方の霊峰と神殿を抱える神秘の国。<br>
+          <strong>トレミア神聖国（Tremia）</strong>：信仰と神託に支えられた神政国家。<br>
+          <strong>ロゼル連邦（Rozel）</strong>：自由都市の集まりによる貿易国家。<br>
+          <strong>ネブル王領（Nebel）</strong>：知識と契約文化に優れる学問国家。<br>
+          <strong>ルガード公国（Rugard）</strong>：騎士道と武芸の伝統を守る戦士国家。<br><br>
+          国が異なっても、その民は同じ“源”を持つ。<br>
+          だからこそ、彼らは今もなお「エラシア人」と呼ばれている
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="section" id="gods">
+      <div class="typewriter">
+        <h2>エルディア神話</h2>
+        <p>Eldia Mythology<br>
+          エルディア神話は、エラシア文明圏において最古かつ中核を成す神話体系であり、<br>
+          世界の成立、神々の興亡、そして神という存在の終焉を描く。<br>
+          この神話は単なる創世譚ではなく、<br>
+          後世の政治・宗教・戦争・倫理観に直接的な影響を与えた<br>
+          「世界構造の説明書」として機能してきた。<br>
+        </p>
+        <hr>
+
+        <div class="heading-1">
+          1. 世界以前 ― アーキーコードの存在
+        </div>
+        <p>
+          エルディア神話において、世界は「無」から創造されたものではない。<br>
+          神話本文および異本の解析から、<br>
+          世界の成立以前に アーキーコード と呼ばれる<br>
+          世界の状態そのものを定義する装置（概念基盤） が存在していたことが示唆されている。<br>
+          アーキーコードの特徴<br>
+          <span class="bold-text">
+            ・神ですら創造できない<br>
+            ・使用・運用・反転は可能<br>
+            ・物質・情報・概念のいずれにも属さない<br>
+            ・原子崩壊や真空崩壊の影響を受けない<br>
+          </span>
+          アーキーコードは「存在」ではなく、<br>
+          存在が成立するための前提条件である。<br>
+        </p>
+        <hr>
+        <div class="heading-1">
+          2.第一神メイリューとカオスの誕生
+        </div>
+        <p>
+          神話に登場する最初の神は メイリュー と呼ばれる。<br>
+          メイリューはアーキーコードの使用方法に到達した最初の存在であり、<br>
+          それによって カオス（宇宙） を展開した。<br>
+          カオスとは<br>
+          <span class="bold-text">
+            ・無秩序ではない<br>
+            ・永遠に拡張し続ける状態<br>
+            ・意味・構造・終端を持たない広がり<br>
+          </span>
+          メイリューは世界を「創った」のではなく、<br>
+          世界を走らせてしまった存在である。<br>
+          メイリューの自壊<br>
+          カオスは無限に拡張するため、<br>
+          有限の肉体と定義を持つメイリューはその負荷に耐えきれず、<br>
+          やがて神としての形を保てなくなり、自壊したと考えられている。<br>
+          その後のメイリューの行方は、神話には記されていない。<br>
+        </p>
+        <hr>
+        <div class="heading-1">
+          3. 下位神たちと「均された世界」
+        </div>
+        <p>
+          メイリューの後、彼の意思を継いだとされる多数の神々が出現した。<br>
+          その数は、後世の記録では 150柱以上 に及ぶ。<br>
+          彼らはアーキーコードを起動することはできなかったが、<br>
+          すでに展開されたカオスに介入し、世界を 「均す」 ことができた。<br>
+          神々の役割<br>
+          <span class="bold-text">
+            ・極端な揺らぎの抑制<br>
+            ・局所的崩壊の防止<br>
+            ・持続可能な世界状態への調整<br>
+          </span>
+          この過程で、<br>
+          <span class="bold-text">
+            ・善悪<br>
+            ・秩序<br>
+            ・信仰<br>
+            ・神話体系<br>
+          </span>
+          が形成され、世界は「住める形」へと変化した。<br>
+        </p>
+        <hr>
+        <div class="heading-1">
+          4. 神の死の無効化と神話の固定
+        </div>
+        <p>
+          世界の安定と引き換えに、神々は以下の制約を設けた。<br>
+          <span class="bold-text">
+            ・神の死という概念の無効化<br>
+            ・神同士の戦争の禁止<br>
+            ・神の増殖（量産）の禁止<br>
+          </span>
+          これにより、<br>
+          <span class="bold-text">
+            ・神は死なない存在となり<br>
+            ・神話は固定化され<br>
+            ・世界は停滞的な安定を得た<br>
+          </span>
+          しかし同時に、<br>
+          神話は更新されない閉じた制度となった。<br>
+        </p>
+        <hr>
+        <div class="heading-1">
+          5. 激神の出現とシステム反転<br>
+        </div>
+        <p>
+          神話における最大の転換点が、激神の出現である。<br>
+          激神は新たなルールを作ったのではなく、<br>
+          既存のシステムを 反転・再運用 した。<br>
+          激神が行ったこと<br>
+          <span class="bold-text">
+            ・無効化されていた「神の死」を再び有効化<br>
+            ・禁止されていた「神同士の戦争」を許可<br>
+          </span>
+          これは激神個人の特権ではなく、<br>
+          全神に共通する世界ルールの変更であった。<br>
+        </p>
+        <hr>
+        <div class="heading-1">
+          6. 神殺しの戦争<br>
+        </div>
+        <p>
+          ルール反転後、神々は等しく殺し合える存在となった。<br>
+          しかし結果は一方的だった。<br>
+          <span class="bold-text">
+            ・激神は圧倒的な武力と戦闘継続能力を持ち<br>
+            ・神々は次々と消耗・死亡<br>
+            ・神の数は 150柱以上 → 8柱 → 7柱 まで減少<br>
+          </span>
+          8柱から7柱への減少<br>
+          8柱（激神を除く）となった時点で、<br>
+          ある神が激神に対し 新たな定義を追加 しようとした。<br>
+          しかしシステム反転後の世界では、<br>
+          重い定義の追加はその神自身に過負荷を与え、<br>
+          結果として自壊を招いた。<br>
+          この隙を突き、激神は半身を失うほどの重傷を負う。<br>
+        </p>
+        <hr>
+        <div class="heading-1">
+          7. 封印という「終戦」<br>
+        </div>
+        <p>
+          半身を失ってもなお戦いを止めない激神に対し、<br>
+          残された7柱の神々は理解した。<br>
+          <span class="bold-text">
+            ・激神は殺せない<br>
+            ・ルールは戻せない<br>
+          </span>
+          ・定義による拘束は自壊を招く<br>
+          結果、選ばれたのは 完全な勝利ではなく終戦。<br>
+          激神は殺されることなく、<br>
+          最低限の封印という形で戦争は終結した。<br>
+        </p>
+        <hr>
+        <div class="heading-1">
+          8. 神話の意味
+        </div>
+        <p>
+          エルディア神話が示す結論は明確である。<br>
+          <span class="bold-text">
+            ・神は絶対ではない<br>
+            ・世界は神の意志で作られたものではない<br>
+            ・秩序は永続しない<br>
+            ・神話は管理され、やがて破綻する<br>
+          </span>
+          この神話は、<br>
+          「神の物語」ではなく<br>
+          神という制度が限界に達した記録である。<br>
+        </p>
+        <hr>
+        <div class="heading-1">
+          9. 後世への影響
+        </div>
+        <p>
+          エルディア神話は後の時代において、<br>
+          <span class="bold-text">
+            ・宗教国家の成立<br>
+            ・神権政治<br>
+            ・終焉戦争<br>
+            ・神殺し思想<br>
+            ・人間による世界継承<br>
+          </span>
+          といった歴史的事象の思想的基盤となった。<br>
+          神話は終わったが、<br>
+          世界は続いた。<br>
+          それこそが、<br>
+          エルディア神話の最大の特徴である。<br>
+        </p>
+        <hr>
+      </div>
+    </div>
+
+    <div class="section" id="timeline">
+      <div class="typewriter">
+        <h2>年表</h2>
+        <p>この世界における主要な出来事を時系列で記述する予定です。</p>
+      </div>
+    </div>
+
+
   </div>
-
-
-
-<div class="section" id="gods">
-  <div class="typewriter">
-    <h2>神々の体系</h2>
-    <p>エルディア神話<br>
-    かつて、世界にはエルディアと呼ばれる楽園が存在していた。<br>
-    そこには百柱の神々が共に暮らし、争いも飢えもない、調和と永遠に満ちた時が流れていた。<br>
-    だが、その平穏に終わりが訪れる。<br>
-    誰にも予測できなかった——“激神（げきしん）”と呼ばれる、たった一柱の神の暴走によって。<br>
-    激神は、瞬く間に七十柱もの神を虐殺した。<br>
-    その力は神々すら凌駕し、世界そのものを破壊する意志を抱いていた。<br>
-    激神は、楽園エルディアを滅ぼすため、空に浮かぶ<strong>衛星“ルナ”</strong>を、地上へと落とそうとした。<br>
-    ——世界を、空から潰すつもりだったのだ。<br>
-    その危機に、残された神々は決断する。七柱を残し、他の神々——二十二柱は、自らの肉体と魂を“矢”へと変えた。<br>
-    矢と化した神たちは、地表に迫るルナを貫き、その軌道を逸らし、辛うじて落下を食い止めた。<br>
-    今なお、空に浮かぶ“ルナ”と地表は、一本の神柱で繋がれている。<br>
-    それは、神々の犠牲の証であり、世界の最も古き封印である。<br>
-    しかし、怒り狂う激神は、なお戦いを止めなかった。<br>
-    最後に残された七柱の神は、数日にも及ぶ激戦の末、激神の半身を引き裂き、ようやく彼を制した。<br>
-    だが、なお戦いを止めようとする激神を、神々は力を振り絞って、地下深くへと封じた。<br>
-    力を使い果たした七柱の神は、それでも再び楽園を築こうと試みたが、<br>
-    その身に残る力は、もはや神々の国を支えるには足りなかった。<br>
-    彼らは決断する。<br>
-    当時、最も強く、最も誇り高かった人々——“エラシア人”に、自らの血を与え、<br>
-    その中で生き続けることを選んだ。<br>
-    こうして、神の血は人に宿り、“神に最も近い民”として、エラシア人の歴史が始まった。<br>
-    今では誰もが知っている、寝物語である。</p>
-  </div>
-</div>
-
-<div class="section" id="timeline">
-  <div class="typewriter">
-    <h2>年表</h2>
-    <p>この世界における主要な出来事を時系列で記述する予定です。</p>
-  </div>
-</div>
-
-
-</div>
 </body>
+
 </html>
