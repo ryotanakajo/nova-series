@@ -1,0 +1,37 @@
+/* 世界・神話の根幹 */
+.heading-1{
+  font-size: 28px;          /* ← ここを調整 */
+  max-width: 70ch;
+  margin: 1.2em auto 0.6em;
+  width: 100%;
+  line-height: 1.2;
+  color: #ba3030;              /* 元の白に戻す */
+  outline: none;
+}
+.bold-text{
+    font-weight: 700;
+}
+/* 神・創世 */
+.heading-2 {
+  font-size: 42px;
+  margin: 1.5em 0 0.5em;
+}
+
+/* 節・事件 */
+.heading-3 {
+  font-size: 28px;
+  margin: 1.2em 0 0.4em;
+}
+
+/* 小項目・定義 */
+.heading-4 {
+  font-size: 20px;
+  margin: 1em 0 0.3em;
+}
+
+/* 注釈・補足 */
+.heading-5 {
+  font-size: 16px;
+  margin: 0.8em 0 0.2em;
+  color: #666;
+}
