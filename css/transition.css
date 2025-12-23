@@ -5,9 +5,24 @@
   height: 50%;
   background: black;
   z-index: 2000;
-  transform: scaleY(1);              /* ← 初期は覆っている状態 */
+  transform: scaleY(1);
   transition: transform 0.8s ease-in-out;
   pointer-events: none;
+}
+
+header {
+  height: 72px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
 
 .page-transition.top {
@@ -22,5 +37,57 @@
 
 /* 開いて消える用クラス */
 .page-transition.ready {
-  transform: scaleY(0);              /* ← 開くとき */
+  transform: scaleY(0);
+  /* ← 開くとき */
+}
+
+.page-transition {
+  z-index: 2000;
+}
+
+/* 通常時（開いた後） */
+.page-transition.ready {
+  transform: scaleY(0);
+  z-index: 500;
+  /* ← ヘッダー・サイドバーより下 */
+}
+
+/* サイドバーを常時表示しないなら、メインの左マージンは消す */
+.hero-section,
+.news-section,
+footer {
+  margin-left: 0;
+  width: 100%;
+}
+
+.floating-buttons {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 300;
+  /* hero上・page-transition下 */
+}
+
+.nav-button {
+  padding: 28px 56px;
+  font-size: 28px;
+  border: 1px solid #aaa;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.heder-left {
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  font-weight: 600;
 }
