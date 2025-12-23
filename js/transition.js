@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, 100);
   });
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("is-open");
+  });
+
 
   // ページ移動時：上下→中央に閉じる
   document.querySelectorAll("a").forEach(link => {
@@ -27,3 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const btn = document.querySelector('.hamburger');
+  sidebar.classList.toggle('active');
+
+  const opened = sidebar.classList.contains('active');
+  btn.textContent = opened ? "✕" : "☰";
+  btn.setAttribute("aria-label", opened ? "Close menu" : "Open menu");
+}
